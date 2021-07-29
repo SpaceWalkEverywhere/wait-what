@@ -1,0 +1,28 @@
+.hd{
+    font-size: 23px;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    box-shadow: 5px 5px 5px #444444;
+}
+.hd span{
+    font-size: medium;
+    color: #f00;
+}
+marquee{
+    bottom: 0;
+    position:fixed ;
+    z-index: 1000000000;
+    line-height: 3;
+    padding: 2.5px;
+    font-size: 30px;
+    animation-name:VIBGYOR ;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes VIBGYOR{
+    from{background-color:black;}
+    to{background-color: #fff;}
+    from{background-color:#fff;}
+    to{background-color: #000;}
+}
