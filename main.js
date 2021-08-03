@@ -28,3 +28,11 @@ function gotposes(result){
         console.log(result);
     }
 }
+function changedacolor(){
+    bgR=Math.floor(Math.random()*256);
+    bgG=Math.floor(Math.random()*256);
+    bgB=Math.floor(Math.random()*256);
+    cR=Math.floor(Math.random()*256);
+    cG=Math.floor(Math.random()*256);
+    cB=Math.floor(Math.random()*256);   
+}
