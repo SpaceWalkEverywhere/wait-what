@@ -13,8 +13,8 @@ marquee{
     bottom: 0;
     position:fixed ;
     z-index: 1000000000;
-    line-height: 3;
-    padding: 2.5px;
+    line-height: 2;
+    padding: px;
     font-size: 30px;
     animation-name:VIBGYOR ;
     animation-duration: 5s;
@@ -25,4 +25,13 @@ marquee{
     to{background-color: #fff;}
     from{background-color:#fff;}
     to{background-color: #000;}
+}
+canvas{
+    border: 8px solid black;
+    border-radius: 20;
+    box-shadow: 5px 5px 5px #444;
+}
+video{
+    border: 8px solid black;
+    box-shadow: 5px 5px 5px #444;
 }
