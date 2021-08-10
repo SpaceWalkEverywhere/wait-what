@@ -36,7 +36,7 @@ function ml(){
 function gotposes(result){
     if(result.length>0){
         console.log(result);
-        if(result[0].pose.rightWrist.confidence.toFixed(2)>0.50){
+        if(result[0].pose.rightWrist.confidence.toFixed(2)>0.05){
         rwx=result[0].pose.rightWrist.x;
         lwx=result[0].pose.leftWrist.x;
         nx=result[0].pose.nose.x;
