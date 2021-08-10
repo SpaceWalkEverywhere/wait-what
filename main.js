@@ -12,13 +12,17 @@ function setup(){
     cR=Math.floor(Math.random()*256);
     cG=Math.floor(Math.random()*256);
     cB=Math.floor(Math.random()*256);
-}
+    cam="on";}
 function draw(){
-    background(bgR,bgG,bgB);
-    //console.log("im working");
-    fill(cR,cG,cB);
-    rect(10,10,300,300);
-
+    if(cam=="on"){
+        background(bgR,bgG,bgB);
+        fill(cR,cG,cB);
+        rect(240,130,200,200);
+    }
+    else{
+        fill(255,255,255);
+        rect(0,0,640,630);
+    }
 }
 function ml(){
     console.log('woohoo model loaded!!!!!!!!!!!!!!!!!!')
@@ -35,4 +39,18 @@ function changedacolor(){
     cR=Math.floor(Math.random()*256);
     cG=Math.floor(Math.random()*256);
     cB=Math.floor(Math.random()*256);   
+}
+function on(){
+    if(cam=="on"){
+        document.getElementById("camm").innerHTML="Cam On";
+        vid.hide();
+        can.position(315,150);
+        cam="off";
+    }
+    else{
+        document.getElementById("camm").innerHTML="Cam Off";
+        vid.show();
+        can.position(630,150);
+        cam="on";
+    }
 }
