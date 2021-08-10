@@ -37,6 +37,9 @@ function gotposes(result){
     if(result.length>0){
         console.log(result);
         if(result[0].pose.rightWrist.confidence.toFixed(2)>0.05){
+            can.show();
+            vid.show();
+            document.getElementById("jjj").innerHTML="NOTE - Get your left and right wrist closer to reduce the size of the square and to increase the size of the square keep your left and right wrist far from each other. Move you nose to move the square";
         rwx=result[0].pose.rightWrist.x;
         lwx=result[0].pose.leftWrist.x;
         nx=result[0].pose.nose.x;
@@ -44,10 +47,9 @@ function gotposes(result){
         differance=floor(lwx-rwx);
         }
         else{
-        rwx=10;
-        lwx=10;
-        nx=10;
-        ny=10;
+        vid.hide();
+        can.hide();
+            document.getElementById("jjj").innerHTML="Wrists are not visible!!!";
         }
     }
     else{
