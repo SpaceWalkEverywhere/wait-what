@@ -13,11 +13,14 @@ function setup(){
     cG=Math.floor(Math.random()*256);
     cB=Math.floor(Math.random()*256);
     cam="on";}
+    lwy=20;
+    rwx=0;
+    rwy=0;
 function draw(){
     if(cam=="on"){
         background(bgR,bgG,bgB);
         fill(cR,cG,cB);
-        rect(240,130,200,200);
+        rect(rwx,rwy,lwy,lwy);
     }
     else{
         fill(255,255,255);
@@ -30,6 +33,9 @@ function ml(){
 function gotposes(result){
     if(result.length>0){
         console.log(result);
+        lwy=result[0].pose.leftWrist.y;
+        rwx=result[0].pose.rightWrist.x;
+        rwy=result[0].pose.rightWrist.y;
     }
 }
 function changedacolor(){
