@@ -12,15 +12,18 @@ function setup(){
     cR=Math.floor(Math.random()*256);
     cG=Math.floor(Math.random()*256);
     cB=Math.floor(Math.random()*256);
-    cam="on";}
-    lwy=20;
-    rwx=0;
-    rwy=0;
+    cam="on";
+    rwx=10;
+    lwx=20;
+    nx=10;
+    ny=10;
+    differance=floor(lwx-rwx);
+}
 function draw(){
     if(cam=="on"){
         background(bgR,bgG,bgB);
         fill(cR,cG,cB);
-        rect(rwx,rwy,lwy,lwy);
+        rect(nx,ny,differance,differance);
     }
     else{
         fill(255,255,255);
@@ -35,18 +38,16 @@ function gotposes(result){
         console.log(result);
         if(result[0].pose.rightWrist.confidence.toFixed(2)>0.50){
         rwx=result[0].pose.rightWrist.x;
-        rwy=result[0].pose.rightWrist.y;
+        lwx=result[0].pose.leftWrist.x;
+        nx=result[0].pose.nose.x;
+        ny=result[0].pose.nose.y;
+        differance=floor(lwx-rwx);
         }
         else{
         rwx=10;
-        rwy=10;
-        }
-        
-        if(result[0].pose.leftWrist.confidence.toFixed(2)>0.50){
-        lwy=result[0].pose.leftWrist.y;
-        }
-        else{
-            lwy=100;
+        lwx=10;
+        nx=10;
+        ny=10;
         }
     }
     else{
