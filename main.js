@@ -20,7 +20,7 @@ function draw(){
     if(cam=="on"){
         background(bgR,bgG,bgB);
         fill(cR,cG,cB);
-        rect(rwx,rwy,lwy,lwy);
+        rect(0,0,lwy,lwy);
     }
     else{
         fill(255,255,255);
